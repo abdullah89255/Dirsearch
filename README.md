@@ -10,86 +10,6 @@ sudo apt update && sudo apt upgrade -y
 
 ---
 
-### 🔹 Step 2: Install Git (if not installed)
-
-```bash
-sudo apt install git -y
-```
-
----
-
-### 🔹 Step 3: Clone Dirsearch
-
-```bash
-git clone https://github.com/maurosoria/dirsearch.git
-```
-
-This will create a folder called `dirsearch`.
-
----
-
-### 🔹 Step 4: Go to Dirsearch directory
-
-```bash
-cd dirsearch
-```
-
----
-
-### 🔹 Step 5: Run Dirsearch
-
-You can run it directly with Python:
-
-```bash
-python3 dirsearch.py -u https://target.com/ -e php,html,js,txt
-```
-
----
-
-### 🔹 Step 6 (Optional): Create a Global Command
-
-So you can run `dirsearch` from anywhere:
-
-```bash
-sudo ln -s $(pwd)/dirsearch.py /usr/bin/dirsearch
-```
-
-Now just run:
-
-```bash
-dirsearch -u https://target.com/
-```
-
----
-
-⚡ **Example usage:**
-
-```bash
-dirsearch -u https://example.com/ -w /usr/share/wordlists/dirb/common.txt -e php,html,js,txt
-```
-
----
-Got it 👍 — that warning is just because the **Kali packaged version of Dirsearch** is outdated and still uses `pkg_resources`, which is deprecated.
-
-You have **two choices**:
-
----
-
-## 🔹 1. Ignore the Warning (Quick & Dirty)
-
-
----
-
-## 🔹 2. Install the Latest Dirsearch (Best Fix)
-
-The GitHub version is always up to date and doesn’t throw this warning.
-
-### Step 1: Remove old version
-
-```bash
-sudo apt remove dirsearch -y
-```
-
 ### Step 2: Install from GitHub
 
 ```bash
@@ -102,14 +22,14 @@ cd ~/tools/dirsearch
 ```bash
 python3 dirsearch.py -h
 ```
-
+```bash
+pip install -r requirements.txt --break-system-packages 
+```
 ### Step 4 (Optional): Make it global
 
 ```bash
 sudo ln -s ~/tools/dirsearch/dirsearch.py /usr/bin/dirsearch
 ```
-
-Perfect 👍 You want **20 practical examples of how to use Dirsearch** with explanations. I’ll break it down step by step so you can actually apply it in bug bounty or pentesting work.
 
 ---
 
